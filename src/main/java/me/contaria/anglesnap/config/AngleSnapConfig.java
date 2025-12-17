@@ -292,7 +292,7 @@ public class AngleSnapConfig {
             AngleSnap.LOGGER.warn("[AngleSnap] Tried to create camera position but no positions are currently loaded!");
             return null;
         }
-        Vec3d cameraPos = MinecraftClient.getInstance().gameRenderer.getCamera().getPos();
+        Vec3d cameraPos = MinecraftClient.getInstance().gameRenderer.getCamera().getCameraPos();
         CameraPosEntry pos = new CameraPosEntry(
                 (int) (cameraPos.getX() * 100.0) / 100.0,
                 (int) (cameraPos.getY() * 100.0) / 100.0,

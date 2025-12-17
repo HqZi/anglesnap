@@ -13,6 +13,7 @@ import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.gui.widget.ClickableWidget;
 import net.minecraft.client.gui.widget.ElementListWidget;
 import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Colors;
 import net.minecraft.util.Identifier;
@@ -197,9 +198,9 @@ public class CameraSnapListWidget extends ElementListWidget<CameraSnapListWidget
             this.z.setEditableColor(Colors.WHITE);
             this.z.setUneditableColor(Colors.WHITE);
 
-            this.edit = this.addChild(new IconButtonWidget(EDIT_TEXT, button -> this.toggleEditing(), EDIT_TEXTURE));
-            this.save = this.addChild(new IconButtonWidget(SAVE_TEXT, button -> this.toggleEditing(), SAVE_TEXTURE));
-            this.delete = this.addChild(new IconButtonWidget(DELETE_TEXT, button -> this.delete(), DELETE_TEXTURE));
+            this.edit = this.addChild(new IconButtonWidget((MutableText) EDIT_TEXT, button -> this.toggleEditing(), EDIT_TEXTURE));
+            this.save = this.addChild(new IconButtonWidget((MutableText) SAVE_TEXT, button -> this.toggleEditing(), SAVE_TEXTURE));
+            this.delete = this.addChild(new IconButtonWidget((MutableText) DELETE_TEXT, button -> this.delete(), DELETE_TEXTURE));
 
             this.setEditing(false);
         }
@@ -308,7 +309,7 @@ public class CameraSnapListWidget extends ElementListWidget<CameraSnapListWidget
         private final ButtonWidget add;
 
         public AddAngleEntry() {
-            this.add = this.addChild(new IconButtonWidget(ADD_TEXT, button -> this.add(), ADD_TEXTURE));
+            this.add = this.addChild(new IconButtonWidget((MutableText) ADD_TEXT, button -> this.add(), ADD_TEXTURE));
         }
 
         @Override

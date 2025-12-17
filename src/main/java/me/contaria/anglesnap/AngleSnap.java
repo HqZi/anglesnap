@@ -119,7 +119,7 @@ public class AngleSnap implements ClientModInitializer {
     }
 
     private static void drawIcon(Camera camera, Matrix4f positionMatrix, Vector3f pos, Quaternionf rotation, AngleEntry angle, float scale) {
-        if (scale == 0.0f) {
+        /*if (scale == 0.0f) {
             return;
         }
 
@@ -140,7 +140,7 @@ public class AngleSnap implements ClientModInitializer {
         consumer.vertex(matrix4f, 1.0f, -1.0f, 0.0f).color(angle.color).texture(1.0f, 0.0f);
 
         matrices.scale(1.0f / scale, 1.0f / -scale, 1.0f / scale);
-        matrices.pop();
+        matrices.pop();*/
     }
 
     private static void drawName(Camera camera, Matrix4f positionMatrix, Vector3f pos, Quaternionf rotation, AngleEntry angle, float scale) {

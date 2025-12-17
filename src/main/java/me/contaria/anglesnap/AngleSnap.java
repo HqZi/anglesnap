@@ -119,6 +119,7 @@ public class AngleSnap implements ClientModInitializer {
     }
 
     private static void drawIcon(Camera camera, Matrix4f positionMatrix, Vector3f pos, Quaternionf rotation, AngleEntry angle, float scale) {
+        //More angle marker rendering code disabled, was giving an error
         /*if (scale == 0.0f) {
             return;
         }

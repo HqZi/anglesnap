@@ -55,7 +55,7 @@ public class AngleSnapConfig {
         this.snapToAngle = this.register("snapToAngle", false);
         this.snapDelay = this.register("snapDelay", 0.0f, 1.0f, 0.0f);
         this.snapLock = this.register("snapLock", 0.0f, 1.0f, 0.25f);
-        this.snapDistance = this.register("snapDistance", 0.0f, 10.0f, 2.5f);
+        this.snapDistance = this.register("snapDistance", 0.0f, 40.0f, 2.5f); //increased max to 40 as with no makers it is harder to find within 10 degrees
         this.disableMultiplayerWarning = this.register("disableMultiplayerWarning", false);
         this.load();
         this.save();
@@ -292,7 +292,7 @@ public class AngleSnapConfig {
             AngleSnap.LOGGER.warn("[AngleSnap] Tried to create camera position but no positions are currently loaded!");
             return null;
         }
-        Vec3d cameraPos = MinecraftClient.getInstance().gameRenderer.getCamera().getPos();
+        Vec3d cameraPos = MinecraftClient.getInstance().gameRenderer.getCamera().getCameraPos();
         CameraPosEntry pos = new CameraPosEntry(
                 (int) (cameraPos.getX() * 100.0) / 100.0,
                 (int) (cameraPos.getY() * 100.0) / 100.0,

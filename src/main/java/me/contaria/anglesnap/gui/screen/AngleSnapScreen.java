@@ -11,6 +11,7 @@ import net.minecraft.client.gui.widget.TextWidget;
 import net.minecraft.screen.ScreenTexts;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import me.contaria.anglesnap.gui.screen.IconButtonWidget;
 
 public class AngleSnapScreen extends Screen {
     private static final Text CONFIGURE_TEXT = Text.translatable("anglesnap.gui.screen.configure");
@@ -31,7 +32,6 @@ public class AngleSnapScreen extends Screen {
         this.addDrawableChild(new AngleSnapListWidget(this.client, this.width, this.height - 70, 35, this));
         this.addDrawableChild(ButtonWidget.builder(ScreenTexts.DONE, button -> this.close()).dimensions(this.width / 2 - 100, this.height - 27, 200, 20).build());
     }
-
     public void snap(AngleEntry angle) {
         angle.snap();
         this.close();
